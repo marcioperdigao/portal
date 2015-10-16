@@ -68,6 +68,9 @@ io.on('connection',function(socket){
                 if(io.nsps[nameSpace].sockets.length<usersOnline.playersOn){
                     console.log("MENOS SOCKETS THEN PLAYERS ON");
                 }
+                else if(io.nsps[nameSpace].sockets.length>usersOnline.playersOn){
+
+                }
             },3000);
         }
         if(controlTime) timeInactivity();//end players activitys

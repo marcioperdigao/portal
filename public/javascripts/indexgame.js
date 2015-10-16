@@ -147,8 +147,6 @@ var ioConnection=function(){
     var logout=document.getElementById('logout');
     logout.addEventListener('click',logOut);
 
-
-
 };
 
 

@@ -8,6 +8,8 @@ var app = require('../app');
 var debug = require('debug')('untitled14:server');
 var http = require('http');
 var mysql=require('mysql');
+var cc= require('config-multipaas');
+var config= cc();
 var myConnection=require('express-myconnection');
 var events=require('events');
 var emitter=new events.EventEmitter();
@@ -15,7 +17,7 @@ var emitter=new events.EventEmitter();
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3000');
+var port = normalizePort(process.env.PORT || '8080');
 app.set('port', port);
 
 /*
@@ -24,8 +26,8 @@ app.set('port', port);
 
 var dbOptions={
   "host":"localhost",
-  "user":"root",
-  "password":"",
+  "user":"adminrvm3B8b",
+  "password":"T7TrKZixA2UD",
   "port": 3306,
   "database":"games"
 };
@@ -45,7 +47,9 @@ var game=require('../server/game');
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port);
+server.listen(config.get('PORT'), config.get('IP'), function () {
+  console.log( "Listening on " + config.get('IP') + ", port " + config.get('PORT') )
+});
 server.on('error', onError);
 server.on('listening', onListening);
 
