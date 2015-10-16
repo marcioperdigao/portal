@@ -1,0 +1,109 @@
+*{
+  font-size: medium;
+}
+
+/* Area do game*/
+#areadogame{
+  visibility: hidden;
+  background-color: #ff2a00;
+  width: 92%;
+  height:92%;
+  margin: 0;
+  position:absolute;
+  top:2.5em;
+  left:4%;
+  border: 1px solid black;
+}
+canvas#game{
+  display: block;
+  border: 1px solid black;
+  width: 100%;
+  height: 75%;
+  
+  margin: 0;
+  padding: 0;
+}
+#messages{
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 20%;
+  background-color: rgba(191, 189, 147, 0.49);
+  font-size: 8px;
+  font-weight: 100;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/*canvas#workShop{
+  position: absolute;
+  top:2.5em;
+  left:11.2%;
+  border: 1px solid black;
+}*/
+
+#form-chat{
+  position: relative;
+  left: 1%;
+  margin: 0;
+  padding: 0;
+}
+#chat-to{
+  width:20%;
+  margin: 0;
+  padding: 0;
+}
+#message{
+  width: 68%;
+  margin: 0;
+  padding: 0;
+}
+#submit-chat{
+  width:7%;
+  margin: 0;
+  padding: 0;
+}
+#createChannel{
+
+}
+/*Fim da area do game*/
+
+
+/*login stats*/
+#section-login {
+  visibility: visible;
+  border-right: 0;
+  margin: 0;
+}
+#section-logout{
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  border-right: 0;
+  margin: 0;
+}
+#li-cadastro{
+
+  margin: 0;
+}
+#cadastrando{
+
+  margin: 0;
+  padding: 0;
+}
+#cadastroFlutuante{
+
+  visibility: hidden;
+  width: 300px;
+  position: relative;
+  /*top: -20px;*/
+  z-index: 5;
+  border: 1px solid black;
+  background-color: lightblue;
+}
+#Sign-Up-Error{
+  visibility: hidden;
+  margin: 0;
+  padding: 0;
+}

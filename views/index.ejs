@@ -1,0 +1,120 @@
+<% include header.ejs%>
+<nav class="navbar navbar-default" id="header">
+    <div >
+
+        <section id="section-login" class="navbar-header">
+
+
+            <form id="formLogin" action='javascript:void(0);' method="post">
+
+                <label for='userLogin'>login</label>
+                <input type='text' id='userLogin' name='userLogin'>
+                <label for='userPassword'>password</label>
+                <input type='password' id='userPassword' name='userPassword'>
+                <input type="submit" id='logar' value="sign in" class="btn-primary">
+            </form>
+            <section id="section-logout" class="btn-group-justified">
+                <div class="btn-group">
+                    <button id="logout" class="btn btn-primary">Logout</button>
+                </div>
+                <div class="btn-group">
+                    <button id="createChannel" class="btn btn-warning">Mudar de Canal</button>
+                </div>
+            </section>
+        </section>
+        <section id='li-cadastro' class="navbar-header">
+
+            <button type='button' value='Cadastro' id='cadastrando' onclick='cadastro()' class="btn-primary">Sign Up</button>
+            <section id='cadastroFlutuante' class="form-group">
+                <form method='post' id='formSignUp' action='javascript:void(0);' onsubmit="toMySql()" role="form" class="form-inline">
+                    <fieldset>
+                        <p style="color:red" id="Sign-Up-Error" class="alert alert-danger fade in"></p>
+
+                        <legend>Informações de login</legend>
+
+                        <label class="col-sm-3" for='email'>Email</label>
+                        <input  type='email' id='email' name='email' required size="15" class="form-control col-sm-2"><br>
+
+                        <div class="form-group">
+                            <label class="col-sm-3" for='user'>User</label>
+                            <input type='text' id="user" name="user" required size="15" class="form-control col-sm-2"><br>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3" for='password'>Senha</label>
+                            <input type='password' id='password' name='password'  required size="15" class="form-control col-sm-2"><br>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Informações pessoais</legend>
+
+                        <label for='borned'>Nascimento</label>
+                        <input type='date' id="borned" name="borned" required size="15" class="form-control"><br>
+                        <label  for='fName'>Nome</label>
+                        <input type='text' id="fName" name="fName" required size="15" class="form-control"><br>
+
+                        <label for='lName'>Sobrenome</label>
+                        <input type='text' id="lName" name="lName" required size="14" class="form-control"><br>
+                        <label for='sexy'>Sexo:</label>
+                        <label>Feminino<input type="radio" id="sexy" name="sexy" value="f" checked class="form-control"></label>
+                        <label>Masculino<input type="radio" id="sexy" name="sexy" value="m" class="form-control"></label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Endereço</legend>
+
+                        <label for="country">País</label>
+                        <select id='country' name='country' required style="width:210px" class="form-control">
+
+                        </select><br>
+
+                        <label for="state">Estado</label>
+                        <select id='state' name='state' required style="width:210px" class="form-control">
+
+                        </select>
+                    </fieldset>
+                    <fieldset>
+                        <input type='submit' value='Sign Up' id="signUpNow" class="btn-primary btn-block" >
+
+                    </fieldset>
+                </form>
+                <button id='button-close' class="btn-warning btn-block">Close</button>
+
+            </section>
+
+
+        </section>
+    </div>
+
+</nav>
+
+
+
+<main class="container-fluid">
+
+
+    <section id="areadogame">
+
+        <canvas id='game' width='1000' height='400'></canvas>
+        <!--<canvas id='workShop' width='228' height='400'></canvas>-->
+        <ul id="messages" class="list-group">
+
+        </ul>
+        <form id='form-chat' action='javascript:void(0);' method='get'>
+            <label for='chat-to'>To</label>
+            <select id='chat-to' name='chat-to'>
+            </select>
+            <label for='message'></label>
+            <input type='text' id='message' name='message' placeholder="type here...">
+            <input type='submit' value='Enviar' id="submit-chat" class="btn-primary">
+
+        </form>
+
+    </section>
+
+
+</main>
+<script src="/socket.io/socket.io.js"></script>
+<script src="javascripts/areagame.js" type="text/javascript" charset="utf-8"></script>
+<script src="javascripts/dinamicagame.js" type="text/javascript" charset="utf-8"></script>
+<script src="javascripts/indexgame.js" type="text/javascript" charset="utf-8"></script>
+
+<% include footer.ejs%>
